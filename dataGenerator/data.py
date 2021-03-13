@@ -25,15 +25,8 @@ SUBSCRIPTION_FIELD_FREQUENCIES = {
 
 
 def get_min_len_dataset():
-    minimum_domain_length = len(CITIES)
-    minimum_domain_name = 'city'
-    if len(DIRECTIONS) < minimum_domain_length:
-        minimum_domain_length = len(DIRECTIONS)
-        minimum_domain_name = 'wind_direction'
-
-    if (MAXIMUM_TEMPERATURE - MINIMUM_TEMPERATURE + 1) < minimum_domain_length:
-        minimum_domain_length = MAXIMUM_TEMPERATURE - MINIMUM_TEMPERATURE + 1
-        minimum_domain_name = 'temperature'
+    minimum_domain_length = MAXIMUM_TEMPERATURE - MINIMUM_TEMPERATURE + 1
+    minimum_domain_name = 'temperature'
 
     if (MAXIMUM_WIND_SPEED - MINIMUM_WIND_SPEED + 1) < minimum_domain_length:
         minimum_domain_length = MAXIMUM_WIND_SPEED - MINIMUM_WIND_SPEED + 1
