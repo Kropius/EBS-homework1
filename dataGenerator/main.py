@@ -1,14 +1,24 @@
 from GenerateSubscriptions import GenerateSubscriptions
+from GeneratePublications import GeneratePublications
+from data import TOTAL_NR_OF_PUBLICATIONS, TOTAL_NR_OF_SUBSCRIPTIONS
 
 
 def main():
-    total_number_of_subscriptions = 10
+
+    # publication_generator = GeneratePublications(TOTAL_NR_OF_PUBLICATIONS)
+    # publications = publication_generator.build_publications_dict()
+    # for elem in publications:
+    #     print(elem)
+
+    print()
+
     field_frequencies = {
+        "stationId": 100,
         "city": 90,
         "temp": 10,
-        "wind_direction": 30
+        "direction": 30
     }
-    generator = GenerateSubscriptions(total_number_of_subscriptions, field_frequencies)
+    generator = GenerateSubscriptions(TOTAL_NR_OF_SUBSCRIPTIONS, field_frequencies)
     generator.generate_subscriptions()
 
 
