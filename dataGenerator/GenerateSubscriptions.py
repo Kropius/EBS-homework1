@@ -1,5 +1,5 @@
-import random
 import math
+from data_generator import *
 
 
 class GenerateSubscriptions:
@@ -19,7 +19,11 @@ class GenerateSubscriptions:
 
     def generate_value(self, key_name):
         if key_name == 'wind_direction':
-            return random.choice(['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'])
+            return generate_directions(1)[0]
+        elif key_name == 'city':
+            return generate_cities(1)[0]
+        elif key_name == 'temp':
+            return generate_temperatures(1)[0]
 
     def generate_subscriptions(self):
         operator_possibilities = ['=', '>', '<', '>=', '<=']
@@ -31,7 +35,7 @@ class GenerateSubscriptions:
                 if self.field_occurrences[key] == remaining_subscriptions or (coin == 1 and self.field_occurrences[key] > 0):
                     field = list()
                     field.append(key)
-                    if key == 'city' or key == 'wind_direction':
+                    if key == 'city' or key == 'direction':
                         field.append('=')
                     else:
                         field.append(random.choice(operator_possibilities))
