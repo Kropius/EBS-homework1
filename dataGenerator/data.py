@@ -20,6 +20,16 @@ def get_min_len_dataset():
     if len(DIRECTIONS) < minimum_domain_length:
         minimum_domain_length = len(DIRECTIONS)
         minimum_domain_name = 'direction'
+
+    if(MAXIMUM_TEMPERATURE-MINIMUM_TEMPERATURE+1) < minimum_domain_length:
+        minimum_domain_length = MAXIMUM_TEMPERATURE-MINIMUM_TEMPERATURE+1
+        minimum_domain_name = 'temp'
+
+    if(MAXIMUM_WIND_SPEED-MINIMUM_WIND_SPEED) < minimum_domain_length:
+        minimum_domain_length = MAXIMUM_WIND_SPEED-MINIMUM_WIND_SPEED+1
+        minimum_domain_name = 'wind'
+
     if TOTAL_NR_OF_STATIONS < minimum_domain_length:
         minimum_domain_name = 'stationId'
+
     return minimum_domain_name, EQUALITY_FREQUENCY

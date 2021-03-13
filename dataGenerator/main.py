@@ -5,14 +5,15 @@ from data import TOTAL_NR_OF_PUBLICATIONS, TOTAL_NR_OF_SUBSCRIPTIONS
 
 def main():
 
-    publication_generator = GeneratePublications(TOTAL_NR_OF_PUBLICATIONS)
-    publications = publication_generator.build_publications_dict()
-    for elem in publications:
-        print(elem)
+    # publication_generator = GeneratePublications(TOTAL_NR_OF_PUBLICATIONS)
+    # publications = publication_generator.build_publications_dict()
+    # for elem in publications:
+    #     print(elem)
 
     print()
 
     field_frequencies = {
+        "stationId": 100,
         "city": 90,
         "temp": 10,
         "direction": 30
