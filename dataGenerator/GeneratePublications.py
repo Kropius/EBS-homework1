@@ -3,17 +3,17 @@ from data_generator import *
 
 class GeneratePublications:
 
-    def __init__(self, TOTAL_NR_OF_PUBLICATIONS):
-        self.TOTAL_NR_OF_PUBLICATIONS = TOTAL_NR_OF_PUBLICATIONS
+    def __init__(self, total_nr_of_publications):
+        self.TOTAL_NR_OF_PUBLICATIONS = total_nr_of_publications
 
-    def build_publication(self, stationId, city, temperature, rain_chance, wind_speed, direction, date):
+    def build_publication(self, station_id, city, temperature, rain_chance, wind_speed, direction, date):
         publication = {
-            "stationId": stationId,
+            "stationId": station_id,
             "city": city,
             "temperature": temperature,
-            "rainChance": rain_chance,
-            "windSpeed": wind_speed,
-            "direction": direction,
+            "rain_chance": rain_chance,
+            "wind_speed": wind_speed,
+            "wind_direction": direction,
             "date": date
         }
         return publication
@@ -28,6 +28,5 @@ class GeneratePublications:
         dates = generate_dates(self.TOTAL_NR_OF_PUBLICATIONS)
 
         return [self.build_publication(stations[i], cities[i], temperatures[i],
-                                  rain_chances[i], wind_speeds[i], directions[i], dates[i]) for i in
+                                       rain_chances[i], wind_speeds[i], directions[i], dates[i]) for i in
                 range(self.TOTAL_NR_OF_PUBLICATIONS)]
-
