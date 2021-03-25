@@ -46,7 +46,7 @@ class GenerateSubscriptions:
                         coin == 1 and self.field_occurrences[key] > 0):
                     field = list()
                     field.append(key)
-                    if self.min_field == key and (key != 'city' and key != 'direction'):
+                    if self.min_field == key and (key != 'city' and key != 'wind_direction'):
                         if self.min_equality_number == self.field_occurrences[key]:
                             field.append('=')
                             self.min_equality_number -= 1
@@ -57,7 +57,7 @@ class GenerateSubscriptions:
                             field.append(sign)
 
                     else:
-                        if key == 'city' or key == 'direction':
+                        if key == 'city' or key == 'wind_direction':
                             field.append('=')
                         else:
                             field.append(random.choice(operator_possibilities))
