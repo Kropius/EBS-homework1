@@ -2,7 +2,7 @@
 
 Homework made by Cioata Matei-Alexandru and Rezmerita Mihnea-Ioan.
 ### To run the program, the following steps are necessary:
-- clone the repository and enter the 'dataGenerator' directory;
+- clone the repository and go to the 'dataGenerator' directory;
 - edit the 'data.py' file and set field domains & frequencies as 
 desired;
 - install python 3 locally and run 'python main.py'
